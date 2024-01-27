@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 가상요소 선택자: 가상으로 요소를 만들어 추가할때 사
+        가상 선택자와 구분하기 위해 가상요소 이름 앞에 콜론(::) 2개를
+        붙여 표시한다
+    - 요소::first-letter : 요소 중 첫 글자를 선택
+    - 요소::first-line : 첫번째 줄을 선택
+    - 요소::after : 요소 이후에 스타일 적용
+    - 요소::before : 요소 이전에 스타일 적용
+    - 요소::selection : 선택한 요소   
+    */
+      h1:before {
+        content: 'CSS3 ';
+        color: peru;
+      }
+      h1::after {
+        content: ' HTML5';
+        color: crimson;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular';
+      }
+      p::first-letter {
+        font-size: 3em;
+      }
+      p::first-line {
+        background-color: hotpink;
+      }
+      p::selection {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>가상 요소 선택자</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo illum
+      sunt distinctio sed, tempore, repellat rerum et ea laborum voluptatum!
+      Quisquam error fugiat debitis maiores officiis, tenetur ullam amet in!
+    </p>
+  </body>
+</html>

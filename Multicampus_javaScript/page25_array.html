@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page25_array.html</title>
+  </head>
+  <body>
+    <h1>배열 - array</h1>
+    <h2>하나의 변수에 여러 개의 데이터를 저장할 수 있는 자료구조</h2>
+    <h2>배열의 속성 : length</h2>
+    <hr />
+    <script>
+      /* JSON(javaScript Object Notation)
+      - 객체 => {속성명:값,속성명2:값2,...}
+      - 배열 => [값1, 값2, 값3, ...]
+    */
+      let user = { name: '홍길동', age: 22 }; //객체
+      let names = ['김영희', '이차돌', '최길동', '송새벽']; // 배열
+
+      document.write(typeof user, '<br>');
+      document.write(typeof names, '<br>');
+      document.write(user.name, '<br>');
+      document.write(user.age, '<br>');
+      document.write('names.length: ', names.length, '<br>');
+      document.write('names[0]: ', names[0], '<br>');
+      document.write('names[2]: ', names[2], '<br>');
+      document.write("<hr color='red'>");
+
+      //for루프 이용해서 names에 저장된 이름들을 한꺼번에 출력하세요 h3태그로 감싸서
+      for (let i = 0; i < names.length; i++) {
+        document.write(`<h3>${names[i]}</h3>`);
+      }
+      // 배열에 새로운 요소 추가 push(새로운 요소)
+      names.push('김철수');
+      document.write(names, '<br>');
+      // 배열 마지막 요소 삭제: pop()
+      names.pop();
+      document.write(names, '<br>');
+      // 배열 앞에 요소 추가 unshift
+      names.unshift('이새럼');
+      document.write(names, '<br>');
+      // 배열 앞 요소 삭제 shift()
+      names.shift();
+      document.write(names, '<br>');
+      // splice(start, count, [새로운 요소]): start 위치에서 count만큼 삭제,
+      // [새로운 요소]가 있으면 해당 위치에 삽입
+      names.splice(2, 1, ['차은우']);
+      document.write(names, '<br>');
+    </script>
+  </body>
+</html>

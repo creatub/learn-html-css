@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jquery 라이브러리 참조 ------------- -->
+    <script src="../jquery-3.7.1.min.js"></script>
+    <!-- ----------------------------------- -->
+    <script>
+      window.onload = function () {
+        let obj = document.getElementById('h2');
+        obj.style.color = 'tomato';
+      };
+      // jQuery() 함수 ==> 축약해서 사용한다. $() 축약함수를 이용
+      $(document).ready(function () {
+        //window.onload = function (), load속도가 빠르다
+        $('#h2')
+          .css('background-color', 'beige')
+          .css('border', '2px double blue')
+          .css('padding', '1em');
+        // class가 cls1인 요소를 선택해서
+        // 배경색 알아서, 글자색 알아서
+        $('.cls1').css('background-color', 'blue').css('color', 'white');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery - 자바스크립트 라이브러리</h1>
+    <h2 id="h2">jQuery라이브러리 참조방법</h2>
+    <!-- h2#하면 id가 포함되게 나옴 -->
+    <h3 class="cls1">[1] 다운로드 받아 설치 http://jquery.com에서 다운로드</h3>
+    <!-- h3.cls1하면 class가 포함되게 나옴 -->
+    <h3 class="cls2">[2] CDN(Content Delivery Network) 방식으로 참조</h3>
+    <hr />
+    <button id="btn">Click Me</button>
+    <div id="dv">div</div>
+  </body>
+</html>

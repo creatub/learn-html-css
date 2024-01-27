@@ -1,0 +1,122 @@
+<!-- page23_window.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page23_window.html</title>
+    <script>
+      /*
+        window 객체의 함수
+        - alert(), prompt(), confirm()
+        - open(url, target, "속성들") : 팝업창을 열어준다.
+        - close() : 팝업창 닫기
+      */
+      //  팝업창을 열려면 전역변수 선언이 필요함
+      let win = null; // null로 초기화, 팝업창을 참조할 전역변수
+      function openWin() {
+        win = window.open(
+          'page22_function.html',
+          '_blank',
+          'width=500, height=500, left=200, top=200'
+        );
+        // win==> 새로운 윈도우창을 참조(팝업창)
+      } //-----------------
+      function closeWin() {
+        if (win != null) {
+          win.close();
+          win = null;
+        }
+      } //-----------------
+      function question() {
+        let yn = window.confirm('정말 삭제할까요?'); // 확인창
+        // alert('yn: ' + yn);
+        if (yn) {
+          alert('삭제하러 갑니다');
+        }
+      } //-----------------
+
+      let wid = null;
+      function alarm() {
+        //3초 뒤에 alert('꽝')
+        // setTimeout(함수, 밀리초)
+        wid = setTimeout(show, 3000); // window는 생략할 수 있음
+        // 3초 뒤에 show 함수를 호출함 => 딱 한 번만 호출함
+      }
+      function show() {
+        alert('꽝');
+      }
+      function clearTime() {
+        if (wid != null) {
+          clearTimeout(wid);
+          wid = null;
+        }
+      }
+      let x = 20; // 공의 x좌표
+      function move() {
+        let obj = document.getElementById('circle');
+        //html객체.style.속성명="속성값" -> css의 속성명 // style 객체 => css와 관련된 객체
+        //css: {background-color:tomato};
+        // javascript: '-' ==> 빼기 연산자 '-'를 없애고 backgroundColor 식으로 사용
+        obj.style.backgroundColor = 'tomato';
+        //---------------------------------setTimeout
+        // wid = setTimeout(function () {
+        //   obj.style.position = 'absolute'; //
+        //   obj.style.left = 180 + 'px';
+        // }, 3000);
+        //--------------------------------------------
+        wid = setInterval(function () {
+          obj.style.position = 'absolute'; //
+          obj.style.left = x + 'px';
+          if (x < 500) {
+            x += 5; // 5만큼씩 증가
+          } else {
+            x = 20;
+          }
+        }, 30);
+
+        // setInterval();
+        // alert(obj);
+      } //----------------
+      function stopMove() {
+        if (wid != null) {
+          clearInterval(wid);
+          wid = null;
+        }
+      }
+    </script>
+    <style>
+      #circle {
+        width: 100px;
+        height: 100px;
+        background-color: palegreen;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      BOM (Browser Object Model) - window, location, history, form, input, ...
+      이런 객체들이 Browser를 구성함
+    </h1>
+    <h2>window객체 (Browser 내장 객체 중에는 최상위 객체임)</h2>
+    <button onclick="openWin()">팝업창 열기</button>
+    <button onclick="closeWin()">팝업창 닫기</button>
+    <button onclick="question()">Confirm</button>
+    <hr />
+
+    <h3>window객체의 setTimeout()/clearTimeout</h3>
+    <button onclick="alarm()">Click Me</button>
+    <button onclick="clearTime()">Stop setTimeout</button>
+    <!-- Click Me를 누른 상태에서 3초가 지나기 전에 clearTime을 누르면 취소됨 -->
+
+    <hr color="red" />
+    <h3>window 객체의 setInterval()/clearInterval()</h3>
+    <p>주기적으로 특정 함수를 계속 실행함</p>
+    <button onclick="move()">setInterval</button>
+    <button onclick="stopMove()">clearInterval</button>
+
+    <br /><br />
+    <div id="circle"></div>
+  </body>
+</html>

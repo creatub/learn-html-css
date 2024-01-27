@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>iframe=Internal Frame(내부 프레임)</h1>
+    <p>
+      iframe은 외부 웹페이지나 동영상 등을 내장할 때 사용됩니다. <br />
+      속성: width, height => iframe의 크기 지정 <br />
+      src=> 내장할 컨텐츠의 url을 지정
+    </p>
+    <iframe
+      src="page08_tableSpan.html"
+      width="80%"
+      height="400"
+      frameborder="0"
+    ></iframe>
+    <br />
+    <label for="agree">
+      <input type="checkbox" name="agree" id="agree" />
+      이용 약관에 동의합니다.
+    </label>
+    <br /><br />
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/JhKOsZuMDWs?si=owz5xo5-R1YBcRIm"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>
