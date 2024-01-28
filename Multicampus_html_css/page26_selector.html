@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* div > p:nth-child(2) {
+        border: thin dotted red;
+      } */
+      p:nth-child(1) {
+        background-color: aquamarine;
+      }
+      /* 짝수 번째에 있는 p만 선택해서 테두리 주기 */
+      p:nth-child(2n) {
+        border: thin dotted red;
+      }
+      /* 홀수 선택 */
+      p:nth-child(2n - 1) {
+        border: thick dashed ghostwhite;
+      }
+      /* DOM Tree - Document Object Model Tree */
+    </style>
+  </head>
+  <body>
+    <h1>nth-child() 활용 - 자식을 선택할 때 사용</h1>
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </body>
+</html>

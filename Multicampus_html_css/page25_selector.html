@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body * {
+        border: 1px solid silver;
+        padding: 10px;
+      }
+      /*
+      선택자 > 요소 : 자식 선택자
+      선택자 요소   : 자손 선택자
+      선택자 + 요소 : 형제 선택자 (바로 아래 동생)
+      선택자 ~ 요소 : 형제 선택자 (아래 동생들)
+      */
+      /* #d1의 자식 중 p 태그를 선택해서 배경색 달리주세요 */
+      #d1 > p {
+        background-color: aliceblue;
+      }
+      /* #d2의 자손 p를 선택해서 테두리를 달리 주세요 */
+      /* #d2 p {
+        border: thin dashed red;
+      } */
+      h1 + div {
+        background-color: blanchedalmond;
+      }
+      #d2 > :first-child {
+        color: mediumaquamarine;
+        font-size: 1.2em;
+      }
+      #d2 > :last-child {
+        border: thin inset maroon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>계층선택자(자식, 자손 선택자)</h1>
+    <!-- first child -->
+    <div id="d1">
+      <p>감자</p>
+      <div id="d11">
+        <p>감자2</p>
+        <p>고구마</p>
+      </div>
+    </div>
+    <div id="d2">
+      <p>감자3</p>
+      <div id="d22">
+        <p>감자4</p>
+        <p>고구마</p>
+      </div>
+    </div>
+  </body>
+</html>
