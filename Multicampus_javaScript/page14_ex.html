@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[readonly] {
+        /*속성 선택자*/
+        background-color: rgb(230, 230, 230);
+      }
+      /* input:read-only{}  상태 선택자 - 버튼도 같이 잡혀서 안됨*/
+    </style>
+  </head>
+  <body>
+    <h1>연산자 실습</h1>
+    <form name="frm">
+      <label for="kor">국어</label>
+      <input id="kor" name="kor" type="text" /><br />
+
+      <label for="math">수학</label>
+      <input id="math" name="math" type="text" /><br />
+
+      <label for="eng">영어</label>
+      <input id="eng" name="eng" type="text" /><br />
+
+      <label for="sum">합계</label>
+      <input id="sum" name="sum" type="text" readonly /><br />
+
+      <label for="avg">평균</label>
+      <input id="avg" name="avg" type="text" readonly /><br />
+      <br />
+      <input type="button" value="성적 내기" onclick="grade()" />
+      <input type="reset" value="다시 쓰기" />
+
+      <script>
+        function grade() {
+          //form이름.input이름.value 식으로 접근
+
+          // 1. 사용자가 입력한 국어점수 얻어오기
+          let kor = Number(frm.kor.value); // or parseFloat
+          // 2. 사용자가 입력한 수학점수 얻어오기
+          let math = Number(frm.math.value);
+          // 3. 사용자가 입력한 영어점수 얻어오기
+          let eng = Number(frm.eng.value);
+          // 4. 사용자가 입력한 값들의 유효성 체크
+          if (!kor) {
+            alert('국어 성적을 입력하세요');
+            frm.kor.focus();
+            return;
+          }
+          if (!math) {
+            alert('수학 성적을 입력하세요');
+            frm.math.focus();
+            return;
+          }
+          if (!eng) {
+            alert('영어 성적을 입력하세요');
+            frm.eng.focus();
+            return;
+          }
+          if (kor > 100 || kor < 0) {
+            alert('국어 성적을 0~100 사이로 입력해주세요.');
+            frm.kor.focus();
+            return;
+          }
+          if (math > 100 || math < 0) {
+            alert('수학 성적을 0~100 사이로 입력해주세요.');
+            frm.math.focus();
+            return;
+          }
+          if (eng > 100 || eng < 0) {
+            alert('영어 성적을 0~100 사이로 입력해주세요.');
+            frm.eng.focus();
+            return;
+          }
+
+          sum = kor + math + eng;
+          avg = sum / 3;
+          // 5. 국영수 합계 점수 구해서 합계 입력란에 넣어주기
+          frm.sum.value = sum.toFixed(2);
+          // 6. 국영수 평균 점수 구해서 평균 입력란에 넣어주기
+          frm.avg.value = avg.toFixed(2);
+        }
+      </script>
+    </form>
+  </body>
+</html>

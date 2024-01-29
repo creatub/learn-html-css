@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let car = Object(); //객체 (속성 + 행동양식)
+      car.color = 'red';
+      car.capacity = 2000;
+      car.run = function (speed) {
+        document.write('<h2>자동차가 시속 ' + speed + 'km로 달려요 </h2>');
+      };
+
+      document.write(typeof car, '<br>');
+      document.write(car.color, '<br>');
+      car.run(1000);
+    </script>
+  </body>
+</html>

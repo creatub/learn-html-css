@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .lst1 {
+        list-style-type: none;
+        list-style-image: url(../images/lst_image.png);
+        /* disc, square, circle */
+      }
+      .lst1 li {
+        /* border: 1px solid blue; */
+        list-style-position: inside;
+        /* outside(default), inside */
+      }
+      .lst2 {
+        list-style: lower-alpha inside;
+      }
+      .menu > li {
+        background-color: lightcyan;
+        width: 120px;
+        height: 30px;
+        padding: 1em;
+        display: inline-block;
+        border-radius: 50px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .menu > li:nth-child(2n) {
+        background-color: blanchedalmond;
+      }
+      .menu > li:nth-child(2n + 1) {
+        background-color: darksalmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>목록 스타일</h1>
+    <ul class="lst1">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>jQuery</li>
+    </ul>
+    <hr />
+    <ol class="lst2">
+      <li>Oracle</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+    </ol>
+    <hr />
+    <ul class="menu">
+      <li><a href="page09_iframe.html">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">jQuery</a></li>
+    </ul>
+    <hr color="red" />
+  </body>
+</html>
