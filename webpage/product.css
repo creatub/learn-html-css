@@ -1,0 +1,85 @@
+/* 추가 사항 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#wrap {
+  max-width: 1024px;
+  min-height: 100vh;
+}
+/* 기존 코딩 */
+.top {
+  background-color: azure;
+  height: 100px;
+  margin-right: 5%;
+}
+.top > ul > li {
+  display: inline;
+  font-weight: bold;
+  padding: 1em;
+  /* border-radius: 5px; */
+  color: red;
+  float: left;
+}
+.top > ul > li:nth-child(2n) {
+  background-color: rgb(254, 222, 228);
+}
+.top > ul > li:nth-child(2n + 1) {
+  background-color: lightsalmon;
+}
+.lnk {
+  text-decoration: none;
+  color: red;
+}
+#member {
+  border-radius: 10px 0 0 10px;
+}
+#basket {
+  border-radius: 0 10px 10px 0;
+}
+#basket_click {
+  border-radius: 100px 5px 100px 5px;
+  background-color: black;
+  width: 200px;
+  height: 80px;
+  color: yellow;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+#product_table {
+  width: 60%;
+  height: 500px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(146, 146, 255);
+  background-image: url(./AirJordan1.png);
+}
+.lst1 {
+  width: 100px;
+  margin: 10px;
+  background-color: rgb(254, 222, 228);
+}
+.lst2 {
+  background-color: white;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#basket_img {
+  width: 30%;
+  object-fit: contain;
+}
+#name {
+  color: red;
+  font-weight: bold;
+}

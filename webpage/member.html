@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="member.css" />
+  </head>
+  <body>
+    <!-- 회원가입 양식을 작성하되 css파일을 외부파일로 작성하세요. member.css-->
+    <!-- <div id="wrap"> -->
+    <table>
+      <tr>
+        <td colspan="2">▶ 아이디(ID)정보</td>
+        <!-- <td></td> -->
+      </tr>
+      <tr>
+        <td rowspan="2" id="firstCol">*아이디</td>
+        <td><input type="id" id="id" /> <button>중복검사</button></td>
+      </tr>
+      <tr>
+        <!-- <td>*아이디</td> -->
+        <td>
+          <div id="explanation">
+            (4~12자 영자/숫자 가능, 한글, 특수문자 ID는 사용할 수 없습니다.)
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td id="firstCol">*비밀번호</td>
+        <td>
+          <input type="password" id="pw" />
+          <div id="explanation">(4~8자 이내로 만들어 주세요)</div>
+        </td>
+      </tr>
+      <tr>
+        <td id="firstCol">*비밀번호 확인</td>
+        <td>
+          <input type="password" id="pwConfirm" />
+          <div id="explanation">(위 번호와 같이 입력해주세요.)</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">▶ 개인 정보</td>
+        <!-- <td></td> -->
+      </tr>
+      <tr>
+        <td id="firstCol">*이름(한글)</td>
+        <td>
+          <input type="text" id="name" />
+          <div id="explanation">(예: 박정현)</div>
+        </td>
+      </tr>
+      <tr>
+        <td id="firstCol">생년월일</td>
+        <td><input type="date" /> <input type="radio" id="radio1" /></td>
+      </tr>
+      <tr>
+        <td rowspan="2" id="firstCol">*주소</td>
+        <td><input type="text" /> <button>우편번호 찾기</button></td>
+      </tr>
+      <tr>
+        <!-- <td id="firstCol">*주소</td> -->
+        <td><input type="text" id="addressDetail" /></td>
+      </tr>
+      <tr>
+        <td id="firstCol">*전화번호</td>
+        <td>
+          <span id="phone">핸드폰</span><input type="text" id="phoneNum" />
+          <input type="radio" name="telecom" id="SKT" value="SKT" />SKT
+          <input type="radio" name="telecom" id="KT" value="KT" />KT
+          <input type="radio" name="telecom" id="LGU" value="LGU" />LGU
+        </td>
+      </tr>
+      <tr>
+        <td id="firstCol">이메일</td>
+        <td><input type="text" id="email" /></td>
+      </tr>
+      <tr>
+        <td id="firstCol">가입인사</td>
+        <td><input type="text" id="introduction" /></td>
+      </tr>
+    </table>
+    <div id="buttonSet">
+      <button class="buttonSet">확인</button>
+      <button class="buttonSet">다시입력</button>
+    </div>
+    <!-- </div> -->
+  </body>
+</html>

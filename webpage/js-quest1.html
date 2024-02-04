@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-QUEST1</title>
+  </head>
+  <body>
+    <h1>js-quest1</h1>
+    <hr />
+    <br />
+    <form id="frm">
+      <label>물건 하나당 가격이</label>
+      <input type="text" id="price1" /><br />
+      <label>물건의 개수</label>
+      <input type="text" id="prod_num" /><br />
+      <label>물건 전체의 가격은??</label>
+      <button onclick="question1(); return false;">계산</button><br />
+      <div id="result1"></div>
+      <br />
+      <hr />
+      <label>전체 구매 금액이</label>
+      <input type="text" id="tot_price" /><br />
+      <label>물건 하나당 가격이</label>
+      <input type="text" id="price2" /><br />
+
+      <label>물건의 개수는?</label>
+      <button onclick="question2(); return false;">계산</button><br />
+      <div id="result2"></div>
+      <br />
+      <hr />
+      <label>사과의 가격이</label>
+      <input type="text" id="price_apple" /><br />
+      <label>배의 가격이</label>
+      <input type="text" id="price_pear" /><br />
+      <label>사과 구매 개수</label>
+      <input type="text" id="apple_num" /><br />
+      <label>배 구매 개수</label>
+      <input type="text" id="pear_num" /><br />
+      <label>사과 구매 금액이 배 구매 금액보다 높을까?</label>
+      <button onclick="question3(); return false;">계산</button><br />
+      <div id="result3"></div>
+      <br />
+      <hr />
+      <label>어제 온도</label>
+      <input type="text" id="temp1" /><label>도</label><br />
+      <label>오늘 온도</label>
+      <input type="text" id="temp2" /><label>도</label><br />
+      <label>어제와 오늘 온도의 평균은?</label>
+      <button onclick="question4(); return false;">계산</button><br />
+      <div id="result4"></div>
+      <br />
+    </form>
+
+    <script>
+      function question1() {
+        let price = Number(frm.price1.value);
+        let prod_num = Number(frm.prod_num.value);
+
+        let tot_price = price * prod_num;
+        document.getElementById('result1').innerHTML =
+          '<p>' + tot_price + '</p></ br>';
+      }
+      function question2() {
+        let tot_price = document.getElementById('tot_price').value;
+        let price2 = document.getElementById('price2').value;
+
+        let prod_num = tot_price / price2;
+        document.getElementById('result2').innerHTML =
+          '<p>' + prod_num + '</p></ br>';
+      }
+
+      function question3() {
+        let price_apple = document.getElementById('price_apple').value;
+        let price_pear = document.getElementById('price_pear').value;
+        let apple_num = document.getElementById('apple_num').value;
+        let pear_num = document.getElementById('pear_num').value;
+
+        if (price_apple * apple_num > price_pear * pear_num) {
+          document.getElementById('result3').innerHTML =
+            '<p>사과 구매 비용이 더 높음</p>';
+        } else if (price_apple * apple_num < price_pear * pear_num) {
+          document.getElementById('result3').innerHTML =
+            '<p>배 구매 비용이 더 높음</p>';
+        } else {
+          document.getElementById('result3').innerHTML = '<p>똑같음</p>';
+        }
+      }
+
+      function question4() {
+        let temp1 = Number(document.getElementById('temp1').value);
+        let temp2 = Number(document.getElementById('temp2').value);
+
+        let avg = (temp1 + temp2) / 2;
+        document.getElementById('result4').innerHTML = '<p>' + avg + '</p>';
+      }
+    </script>
+  </body>
+</html>

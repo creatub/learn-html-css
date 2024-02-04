@@ -1,0 +1,30 @@
+td[colspan='2'] {
+  background-color: skyblue;
+  font-weight: bold;
+}
+#firstCol {
+  background-color: wheat;
+  width: 150px;
+  text-align: right;
+}
+#explanation {
+  display: inline-block;
+  font-size: 0.7em;
+  color: navy;
+}
+#addressDetail {
+  width: 400px;
+}
+#introduction {
+  line-height: 4;
+  width: 400px;
+}
+#buttonSet {
+  width: 550px;
+  text-align: center;
+}
+.buttonSet {
+  width: 100px;
+  margin: 20px auto;
+  display: inline-block;
+}
